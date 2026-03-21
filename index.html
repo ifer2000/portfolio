@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>My Portfolio</h1>
-  <p>GitHub Pages test</p>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <h1 class="logo">PORTFOLIO</h1>
+        <button class="close-sidebar" id="closeSidebar" aria-label="사이드바 닫기">✕</button>
+      </div>
+
+      <nav class="nav">
+        <a href="#home" class="nav-link">홈</a>
+        <a href="#about" class="nav-link">소개</a>
+        <a href="#projects" class="nav-link">프로젝트</a>
+        <a href="#contact" class="nav-link">연락처</a>
+      </nav>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-btn" id="menuBtn" aria-label="사이드바 열기">☰</button>
+          <h2>My Web Page</h2>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환">
+          <span id="themeText">다크모드</span>
+        </button>
+      </header>
+
+      <section class="hero" id="home">
+        <h1>안녕하세요</h1>
+        <p>사이드바와 다크모드 토글이 있는 웹페이지입니다.</p>
+      </section>
+
+      <section class="section" id="about">
+        <h3>소개</h3>
+        <p>
+          이 영역에는 자기소개, 기술 스택, 학습 내용 등을 넣을 수 있습니다.
+        </p>
+      </section>
+
+      <section class="section" id="projects">
+        <h3>프로젝트</h3>
+        <div class="card-grid">
+          <article class="card">
+            <h4>프로젝트 1</h4>
+            <p>프로젝트 설명을 여기에 작성합니다.</p>
+          </article>
+
+          <article class="card">
+            <h4>프로젝트 2</h4>
+            <p>프로젝트 설명을 여기에 작성합니다.</p>
+          </article>
+
+          <article class="card">
+            <h4>프로젝트 3</h4>
+            <p>프로젝트 설명을 여기에 작성합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h3>연락처</h3>
+        <p>이메일, GitHub, 블로그 주소 등을 넣으면 된다.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
