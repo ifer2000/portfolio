@@ -2,11 +2,6 @@ const body = document.body;
 const themeToggle = document.getElementById("themeToggle");
 const themeText = document.getElementById("themeText");
 
-const sidebar = document.getElementById("sidebar");
-const menuBtn = document.getElementById("menuBtn");
-const closeSidebar = document.getElementById("closeSidebar");
-const overlay = document.getElementById("overlay");
-
 function applyTheme(theme) {
   if (theme === "dark") {
     body.classList.add("dark");
@@ -25,26 +20,4 @@ themeToggle.addEventListener("click", () => {
   const newTheme = isDark ? "light" : "dark";
   localStorage.setItem("theme", newTheme);
   applyTheme(newTheme);
-});
-
-menuBtn.addEventListener("click", () => {
-  sidebar.classList.add("open");
-  overlay.classList.add("show");
-});
-
-closeSidebar.addEventListener("click", () => {
-  sidebar.classList.remove("open");
-  overlay.classList.remove("show");
-});
-
-overlay.addEventListener("click", () => {
-  sidebar.classList.remove("open");
-  overlay.classList.remove("show");
-});
-
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    overlay.classList.remove("show");
-  });
 });
