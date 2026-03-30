@@ -7,49 +7,66 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app">
-    <main class="main">
-      <header class="header">
-        <div class="header-left">
-          <h2>An Chan Woo</h2>
-        </div>
+  <aside class="side-panel left-panel" id="leftPanel">
+    <button class="close-btn" id="closeLeft" aria-label="왼쪽 패널 닫기">✕</button>
+    <div class="panel-content">
+      <h2>An Chan Woo</h2>
 
-        <button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환">
-          <span id="themeText">다크모드</span>
-        </button>
-      </header>
+      <div class="info-block">
+        <h3>이름</h3>
+        <p>안찬우</p>
+      </div>
 
-      <section class="hero" id="home">
-        <h1>An Chan Woo</h1>
-        <p></p>
-      </section>
-
-      <section class="section" id="about">
+      <div class="info-block">
         <h3>연락처</h3>
         <p>010-9937-5920</p>
-      </section>
+      </div>
 
-      <section class="section" id="projects">
-        <h3>프로젝트</h3>
-        <div class="card-grid">
-          <article class="card">
-            <h4>프로젝트 1</h4>
-            <p>.</p>
-          </article>
+      <div class="info-block">
+        <h3>학교</h3>
+        <p>한라대학교 컴퓨터공학부</p>
+      </div>
+    </div>
+  </aside>
 
-          <article class="card">
-            <h4>프로젝트 2</h4>
-            <p>.</p>
-          </article>
+  <aside class="side-panel right-panel" id="rightPanel">
+    <button class="close-btn" id="closeRight" aria-label="오른쪽 패널 닫기">✕</button>
+    <div class="panel-content">
+      <h2>Portfolio</h2>
 
-          <article class="card">
-            <h4>프로젝트 3</h4>
-            <p>.</p>
-          </article>
-        </div>
-      </section>
-    </main>
-  </div>
+      <nav class="portfolio-list">
+        <a href="#project1" class="portfolio-item">프로젝트 1</a>
+        <a href="#project2" class="portfolio-item">프로젝트 2</a>
+        <a href="#project3" class="portfolio-item">프로젝트 3</a>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="landing">
+    <div class="center-box">
+      <button class="open-box" id="openLeft">An Chan Woo</button>
+      <button class="open-box" id="openRight">Portfolio</button>
+    </div>
+  </main>
+
+  <section class="content">
+    <section class="section" id="project1">
+      <h3>프로젝트 1</h3>
+      <p>설명</p>
+    </section>
+
+    <section class="section" id="project2">
+      <h3>프로젝트 2</h3>
+      <p>설명</p>
+    </section>
+
+    <section class="section" id="project3">
+      <h3>프로젝트 3</h3>
+      <p>설명</p>
+    </section>
+  </section>
 
   <script src="script.js"></script>
 </body>
