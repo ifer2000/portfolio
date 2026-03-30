@@ -1,23 +1,39 @@
-const body = document.body;
-const themeToggle = document.getElementById("themeToggle");
-const themeText = document.getElementById("themeText");
+const leftPanel = document.getElementById("leftPanel");
+const rightPanel = document.getElementById("rightPanel");
+const overlay = document.getElementById("overlay");
 
-function applyTheme(theme) {
-  if (theme === "dark") {
-    body.classList.add("dark");
-    themeText.textContent = "라이트모드";
-  } else {
-    body.classList.remove("dark");
-    themeText.textContent = "다크모드";
-  }
+const openLeft = document.getElementById("openLeft");
+const openRight = document.getElementById("openRight");
+const closeLeft = document.getElementById("closeLeft");
+const closeRight = document.getElementById("closeRight");
+
+function closePanels() {
+  leftPanel.classList.remove("open");
+  rightPanel.classList.remove("open");
+  overlay.classList.remove("show");
 }
 
-const savedTheme = localStorage.getItem("theme") || "light";
-applyTheme(savedTheme);
+function openLeftPanel() {
+  rightPanel.classList.remove("open");
+  leftPanel.classList.add("open");
+  overlay.classList.add("show");
+}
 
-themeToggle.addEventListener("click", () => {
-  const isDark = body.classList.contains("dark");
-  const newTheme = isDark ? "light" : "dark";
-  localStorage.setItem("theme", newTheme);
-  applyTheme(newTheme);
+function openRightPanel() {
+  leftPanel.classList.remove("open");
+  rightPanel.classList.add("open");
+  overlay.classList.add("show");
+}
+
+openLeft.addEventListener("click", openLeftPanel);
+openRight.addEventListener("click", openRightPanel);
+
+closeLeft.addEventListener("click", closePanels);
+closeRight.addEventListener("click", closePanels);
+overlay.addEventListener("click", closePanels);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closePanels();
+  }
 });
