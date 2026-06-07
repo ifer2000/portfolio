@@ -1,39 +1,49 @@
-const leftPanel = document.getElementById("leftPanel");
-const rightPanel = document.getElementById("rightPanel");
-const overlay = document.getElementById("overlay");
+const notes = document.querySelectorAll(".note");
+const tabs = document.querySelectorAll(".note-tab");
 
-const openLeft = document.getElementById("openLeft");
-const openRight = document.getElementById("openRight");
-const closeLeft = document.getElementById("closeLeft");
-const closeRight = document.getElementById("closeRight");
+let currentActiveNote = document.querySelector(".note.active");
 
-function closePanels() {
-  leftPanel.classList.remove("open");
-  rightPanel.classList.remove("open");
-  overlay.classList.remove("show");
+function activateNote(selectedNote) {
+
+    if (currentActiveNote !== selectedNote) {
+        const selectedContent = selectedNote.querySelector(".note-content");
+
+        if (selectedContent) {
+            selectedContent.scrollTop = 0;
+        }
+    }
+
+    notes.forEach(function(note, index) {
+
+        if (note === selectedNote) {
+            note.classList.add("active");
+            note.classList.remove("inactive");
+            note.style.zIndex = 50;
+        } else {
+            note.classList.remove("active");
+            note.classList.add("inactive");
+            note.style.zIndex = 10 + index;
+        }
+
+    });
+
+    currentActiveNote = selectedNote;
 }
 
-function openLeftPanel() {
-  rightPanel.classList.remove("open");
-  leftPanel.classList.add("open");
-  overlay.classList.add("show");
-}
+tabs.forEach(function(tab) {
 
-function openRightPanel() {
-  leftPanel.classList.remove("open");
-  rightPanel.classList.add("open");
-  overlay.classList.add("show");
-}
+    tab.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const selectedNote = tab.parentElement;
+        activateNote(selectedNote);
+    });
 
-openLeft.addEventListener("click", openLeftPanel);
-openRight.addEventListener("click", openRightPanel);
+});
 
-closeLeft.addEventListener("click", closePanels);
-closeRight.addEventListener("click", closePanels);
-overlay.addEventListener("click", closePanels);
+notes.forEach(function(note) {
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closePanels();
-  }
+    note.addEventListener("click", function() {
+        activateNote(note);
+    });
+
 });
