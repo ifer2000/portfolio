@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Cooking Recipe</title>
+    <link rel="stylesheet" href="./ccr.css" />
+</head>
+<body>
+    <header class="page-header">
+        <nav class="nav">
+            <a href="./index.html" class="logo">Portfolio</a>
+
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#role">Role</a>
+                <a href="#live-demo">Live</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Graduation Project</p>
+                <h1>Click Cooking Recipe</h1>
+                <p class="hero-description">
+                    식재료 이미지를 업로드하면 YOLO 모델이 재료를 인식하고,
+                    보유 재료를 기준으로 만들 수 있는 레시피를 추천하는 서비스입니다.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#live-demo" class="primary-button">기능 체험하기</a>
+                    <a href="./index.html" class="secondary-button">포트폴리오로 돌아가기</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="card-title">CCR 핵심 흐름</div>
+
+                <div class="flow">
+                    <div class="flow-item">Image Upload</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-item">YOLO Detection</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-item">FastAPI Server</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-item">Recipe</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-grid" aria-label="프로젝트 요약">
+            <article class="info-card">
+                <span class="info-label">Project</span>
+                <strong>Click Cooking Recipe</strong>
+            </article>
+
+            <article class="info-card">
+                <span class="info-label">Role</span>
+                <strong>Backend Developer</strong>
+            </article>
+
+            <article class="info-card">
+                <span class="info-label">Tech Stack</span>
+                <strong>FastAPI · PostgreSQL · YOLO · AWS</strong>
+            </article>
+
+            <article class="info-card">
+                <span class="info-label">Feature</span>
+                <strong>식재료 인식 기반 레시피 추천</strong>
+            </article>
+        </section>
+
+        <section id="overview" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Overview</p>
+                <h2>프로젝트 개요</h2>
+            </div>
+
+            <div class="content-card">
+                <p>
+                    Click Cooking Recipe는 사용자가 가지고 있는 식재료 사진을 기반으로
+                    요리 가능한 레시피를 추천하는 졸업작품입니다.
+                    사용자는 식재료 이미지를 업로드하고, 서버는 이미지를 분석하여 재료를 인식한 뒤
+                    데이터베이스에 저장된 레시피와 비교하여 추천 결과를 제공합니다.
+                </p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <h3>식재료 이미지 업로드</h3>
+                        <p>사용자가 식재료 사진을 업로드하면 서버로 이미지가 전송됩니다.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>YOLO 기반 재료 인식</h3>
+                        <p>YOLO 모델을 활용하여 이미지 속 식재료를 탐지합니다.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>레시피 추천</h3>
+                        <p>인식된 식재료와 레시피 재료를 비교하여 추천 결과를 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Architecture</p>
+                <h2>시스템 구조</h2>
+            </div>
+
+            <div class="architecture-card">
+                <div class="arch-box">
+                    <span>Client</span>
+                    <strong>Portfolio Page</strong>
+                    <p>FrontEnd</p>
+                </div>
+
+                <div class="arch-line">→</div>
+
+                <div class="arch-box">
+                    <span>API Server</span>
+                    <strong>FastAPI</strong>
+                    <p>이미지 업로드 및 추천 API</p>
+                </div>
+
+                <div class="arch-line">→</div>
+
+                <div class="arch-box">
+                    <span>AI Model</span>
+                    <strong>YOLO</strong>
+                    <p>식재료 객체 탐지</p>
+                </div>
+
+                <div class="arch-line">→</div>
+
+                <div class="arch-box">
+                    <span>Database</span>
+                    <strong>PostgreSQL</strong>
+                    <p>식재료 및 레시피 데이터 관리</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="role" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">My Role</p>
+                <h2>담당 역할</h2>
+            </div>
+
+            <div class="content-card">
+                <ul class="role-list">
+                    <li>FastAPI 기반 백엔드 서버 개발</li>
+                    <li>식재료 이미지 업로드 API 구현</li>
+                    <li>YOLO 모델 연동 API 구현</li>
+                    <li>PostgreSQL 데이터베이스 설계 및 연동</li>
+                    <li>인식된 식재료 기반 레시피 추천 로직 구현</li>
+                    <li>AWS EC2 환경에서 서버 배포 및 실행</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="live-demo" class="section live-demo-section">
+            <div class="section-heading">
+                <h2>식재료 사진으로 레시피 추천받기</h2>
+                <p class="section-description">
+                    식재료 사진을 여러 장 선택하거나 드래그한 뒤,
+                    분석 버튼을 누르면 CCR 서버가 이미지를 분석하고 추천 레시피를 표시합니다.
+                </p>
+            </div>
+
+            <div class="demo-layout">
+                <div class="upload-card">
+                    <div class="sample-box">
+                        <div class="sample-heading">
+                            <h3>테스트용 식재료 사진</h3>
+                        </div>
+
+                        <div class="sample-list">
+                            <div class="sample-item">
+                                <span>당근</span>
+                                <div class="sample-actions">
+                                    <button
+                                        type="button"
+                                        class="sample-use-button"
+                                        data-sample-url="./sample/carrot.jpg"
+                                        data-sample-name="carrot.jpg"
+                                    >
+                                        샘플 추가
+                                    </button>
+                                    <a href="./sample/carrot.jpg" download>다운로드</a>
+                                </div>
+                            </div>
+
+                            <div class="sample-item">
+                                <span>양파</span>
+                                <div class="sample-actions">
+                                    <button
+                                        type="button"
+                                        class="sample-use-button"
+                                        data-sample-url="./sample/onion.jpg"
+                                        data-sample-name="onion.jpg"
+                                    >
+                                        샘플 추가
+                                    </button>
+                                    <a href="./sample/onion.jpg" download>다운로드</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        id="dropZone"
+                        class="drop-zone"
+                        role="button"
+                        tabindex="0"
+                        aria-label="식재료 이미지 업로드 영역"
+                    >
+                        <div class="drop-icon">🥕</div>
+                        <h3>식재료 사진을 여기에 드래그하세요</h3>
+                        <p>또는 클릭해서 여러 장의 이미지 파일을 선택하세요.</p>
+                        <span class="file-rule">JPG, PNG, WEBP 등 이미지 파일 지원</span>
+                    </div>
+
+                    <input
+                        id="fileInput"
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        hidden
+                    />
+
+                    <div id="selectedFilesBox" class="selected-files-box is-hidden">
+                        <div class="selected-files-header">
+                            <strong id="selectedCount">선택된 사진 0장</strong>
+                            <button id="clearButton" type="button" class="clear-button">
+                                전체 삭제
+                            </button>
+                        </div>
+
+                        <div id="previewList" class="preview-list"></div>
+                    </div>
+
+                    <div class="upload-actions">
+                        <button id="uploadButton" type="button" class="analyze-button" disabled>
+                            선택한 사진 분석하기
+                        </button>
+                    </div>
+
+                    <p id="statusMessage" class="status-message">
+                        사진을 선택한 뒤 분석 버튼을 눌러주세요.
+                    </p>
+                </div>
+
+                <div class="result-card">
+                    <div id="emptyResult" class="empty-result">
+                        <div class="empty-icon">🍽️</div>
+                        <h3>추천 결과가 여기에 표시됩니다</h3>
+                        <p>
+                            식재료 사진을 여러 장 선택한 뒤 분석 버튼을 누르면
+                            인식된 재료와 추천 레시피를 확인할 수 있습니다.
+                        </p>
+                    </div>
+
+                    <div id="loadingResult" class="loading-result is-hidden">
+                        <div class="spinner"></div>
+                        <h3>식재료를 분석하는 중입니다</h3>
+                        <p>선택한 이미지를 CCR 서버에 순서대로 전송하고 있습니다.</p>
+                    </div>
+
+                    <div id="errorBox" class="error-box is-hidden"></div>
+
+                    <div id="resultContent" class="result-content is-hidden">
+                        <div class="result-section">
+                            <h3>인식된 식재료</h3>
+                            <div id="recognizedIngredients" class="chip-list"></div>
+                        </div>
+
+                        <div class="result-section">
+                            <h3>추천 레시피</h3>
+                            <div id="recipeList" class="recipe-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Click Cooking Recipe</p>
+    </footer>
+
+    <script src="./ccr.js"></script>
+</body>
+</html>

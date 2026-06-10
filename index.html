@@ -1,0 +1,181 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 기술 로고용 Devicon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+
+<main class="layout">
+
+    <!-- 왼쪽 프로필 영역 -->
+    <section class="profile-card">
+        <div class="profile-content">
+
+            <div class="avatar">A</div>
+
+            <h2>An Chan Woo</h2>
+
+            <p>
+                안녕하세요 개발자 안찬우입니다.
+            </p>
+
+            <p>
+                Email : acw1344@naver.com<br>
+                연락처 : 010-9937-5920
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- 오른쪽 책 + 포스트잇 영역 -->
+    <section class="book-area">
+
+        <div class="book">
+
+            <!-- 책 배경 페이지 -->
+            <div class="page-cover">
+            </div>
+
+
+            <!-- 스택 -->
+            <article class="note stack active" data-note="stack">
+                <button class="note-tab" type="button">STACK</button>
+
+                <div class="note-content">
+
+                    <div class="stack-board">
+
+                        <!-- <div class="stack-title-pill">STACK</div> -->
+                        <h2>Stack</h2>
+                        <hr>
+
+                        <div class="stack-grid">
+
+                            <div class="stack-card">
+                                <h3>FRONTEND</h3>
+                                <div class="logo-grid">
+                                    <div class="logo-item">
+                                        <i class="devicon-html5-plain colored"></i>
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="logo-item">
+                                        <i class="devicon-css3-plain colored"></i>
+                                        <span>CSS3</span>
+                                    </div>
+                                    <div class="logo-item">
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div class="logo-item">
+                                        <i class="devicon-react-original colored"></i>
+                                        <span>React</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stack-card">
+                                <h3>BACKEND</h3>
+                                <div class="logo-grid">
+                                    <div class="logo-item">
+                                        <i class="devicon-python-plain colored"></i>
+                                        <span>Python</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stack-card">
+                                <h3>ENGINE</h3>
+                                <div class="logo-grid">
+                                    <div class="logo-item">
+                                        <img class="tech-logo" 
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" 
+                                            alt="Unity">
+                                        <span>Unity</span>
+                                    </div>
+                                    <div class="logo-item">
+                                        <i class="devicon-unrealengine-original"></i>
+                                        <span>Unreal</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stack-card">
+                                <h3>DEVOPS</h3>
+                                <div class="logo-grid">
+                                    <div class="logo-item">
+                                        <i class="devicon-github-original"></i>
+                                        <span>GitHub</span>
+                                    </div>
+                                    <div class="logo-item">
+                                        <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                                        <span>AWS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- 프로젝트 -->
+            <article class="note project inactive" data-note="project">
+                <button class="note-tab" type="button">PROJECT</button>
+
+                <div class="note-content">
+                        <h2>Project</h2>
+                        <hr>
+                        <div class="project-box">
+                            <div class="project-media">
+                                <img class="project-image" src="2.png" alt="Click Cooking Recipe 앱 화면" width="250" height="300">
+                                <a class="ccr-detail-button" href="./ccr.html">CCR 상세 보기</a>
+                            </div>
+
+    <div class="project-text">
+        <h3>졸업작품 : 객체 인식 기반 식재료 레시피 추천</h3>
+                <p>
+                    사용자가 냉장고 속 식재료를 촬영하면 객체 인식 AI가 재료를 분석하고,
+                    보유한 재료를 활용할 수 있는 레시피를 추천하는 모바일 애플리케이션입니다.
+                    사용자는 인식된 재료를 직접 추가하거나 삭제할 수 있으며,
+                    이를 바탕으로 보유 재료와 관련성이 높은 레시피를 확인할 수 있습니다.
+                </p>
+                <h3>담당 역할</h3>
+                <p>
+                    FastAPI 서버 개발<br>
+                    PostgreSQL 데이터베이스 설계<br>
+                    AWS EC2 · RDS 배포<br>
+                    YOLO 모델 연동
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+            <!-- 학습 -->
+            <article class="note study inactive" data-note="study">
+                <button class="note-tab" type="button">EDUCATION</button>
+
+                <div class="note-content">
+                    <h2>Education</h2>
+                    <hr>
+                    <p>2021 한라대학교 컴퓨터공학부 입학</p>
+                    <p>2027 한라대학교 컴퓨터공학부 졸업(예정)</p>
+                </div>
+            </article>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
